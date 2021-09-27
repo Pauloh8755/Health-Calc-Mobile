@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Health Calc</string>
+    <string name="login_title">Login</string>
+    <string name="login_subtitle">Faça login para continuar</string>
+    <string name="login_et_email">E-mail</string>
+    <string name="login_et_senha">Senha</string>
+    <string name="login_entrar">Entrar</string>
+    <string name="login_lembrar_me">Lembrar-me</string>
+    <string name="login_esqueci_senha">Esqueci a senha</string>
+    <string name="login_n_tem_conta">Não tem uma conta?</string>
+    <string name="login_criar_conta">Crie uma conta</string>
 </resources>

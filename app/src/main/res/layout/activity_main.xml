@@ -37,7 +37,7 @@
             android:id="@+id/iv_titulo"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/dieta"
+            android:src="@drawable/calories"
             android:layout_alignParentEnd="true"
             android:layout_alignTop="@+id/tv_titulo"
             android:layout_alignBottom="@id/tv_titulo"
@@ -56,20 +56,111 @@
 
 
         />
-    <LinearLayout
-        android:id="@+id/form"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_below="@+id/wave_top"
-        android:layout_above="@+id/wave_bottom"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        >
+        android:layout_above="@+id/wave_bottom">
+        <LinearLayout
+            android:id="@+id/form"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_title"
+                android:textAppearance="@style/titulo"
+            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_subtitle"
+                android:textAppearance="@style/sub_titulo"
+            />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="@string/login_et_email"
+                app:endIconMode="clear_text"
 
+                >
 
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="@string/login_et_senha"
+                app:passwordToggleEnabled="true"
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberPassword"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <Button
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login_entrar"
+                style="@style/button_login"
+                />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_lembrar_me"
+                android:layout_gravity="end"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_esqueci_senha"
+                android:layout_gravity="end"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:textAllCaps="false"
+                android:gravity="end"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end|center_vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_n_tem_conta"
+                    />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_criar_conta"
+                    android:layout_gravity="end"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:textAllCaps="false"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
     <ImageView
         android:id="@+id/wave_bottom"
         android:layout_width="match_parent"
@@ -77,7 +168,6 @@
         android:scaleType="fitXY"
         android:layout_alignParentBottom="true"
         android:src="@drawable/wave_up"
-
 
         />
     <TextView

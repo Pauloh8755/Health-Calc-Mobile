@@ -8,12 +8,12 @@
 
     <RelativeLayout
         android:id="@+id/header"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:background="#4356FF"
+        android:background="@color/Blue_500"
         android:paddingTop="10dp"
 
         >
@@ -33,15 +33,16 @@
 
 
             />
+
         <ImageView
             android:id="@+id/iv_titulo"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/calories"
-            android:layout_alignParentEnd="true"
             android:layout_alignTop="@+id/tv_titulo"
             android:layout_alignBottom="@id/tv_titulo"
+            android:layout_alignParentEnd="true"
             android:layout_marginEnd="20dp"
+            android:src="@drawable/logo"
 
             />
 
@@ -118,6 +119,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
             <Button
+                android:id="@+id/btn_entrar"
                 android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

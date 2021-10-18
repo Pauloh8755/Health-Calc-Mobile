@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/calories"
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthCalc">
-        <activity android:name=".DashBoardActivity"></activity>
+        <activity android:name=".NovoUsuarioActivity"></activity>
+        <activity android:name=".DashBoardActivity" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">

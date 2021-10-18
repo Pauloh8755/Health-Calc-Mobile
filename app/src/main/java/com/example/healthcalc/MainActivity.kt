@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         //Criando instancia do botão entrar
         val buttonEntrar = findViewById<Button>(R.id.btn_entrar)
         buttonEntrar.setOnClickListener{
-            val abrirDashBoard = Intent(this, DashBoardActivity::class.java)
+            val abrirDashBoard = Intent(this, NovoUsuarioActivity::class.java)
             startActivity(abrirDashBoard)
         }
     }

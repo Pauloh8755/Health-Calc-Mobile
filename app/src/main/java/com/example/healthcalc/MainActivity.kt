@@ -14,8 +14,15 @@ class MainActivity : AppCompatActivity() {
         //Criando instancia do botão entrar
         val buttonEntrar = findViewById<Button>(R.id.btn_entrar)
         buttonEntrar.setOnClickListener{
-            val abrirDashBoard = Intent(this, NovoUsuarioActivity::class.java)
+            val abrirDashBoard = Intent(this, DashBoardActivity::class.java)
             startActivity(abrirDashBoard)
+        }
+
+        //Criando instancia do botão novo usuario
+        val buttonNovoUser =  findViewById<Button>(R.id.btn_novo_user)
+        buttonNovoUser.setOnClickListener {
+            val abrirNovaConta = Intent(this, NovoUsuarioActivity::class.java)
+            startActivity(abrirNovaConta)
         }
     }
 }

@@ -1,11 +1,16 @@
 package com.example.healthcalc
 
+import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.EditText
 import android.widget.RadioButton
+import android.widget.Toast
+import java.util.*
+import kotlin.math.log
 
 class NovoUsuarioActivity : AppCompatActivity() {
     // Criando objeto do tipo EditText
@@ -32,7 +37,41 @@ class NovoUsuarioActivity : AppCompatActivity() {
         radioMasculino =findViewById(R.id.radio_masculino)
 
         supportActionBar!!.title = "Nova Conta"
+
+
+
+        //Colocar um listener de click no editText data nascimento
+        //para abrir o calendario(DatePicker)
+        editDataNascimento.setOnClickListener {
+            criarDatePicker()
+        }
     }
+
+    private fun criarDatePicker() {
+        // Criar um calendário
+        //*** Obter a data atual(hoje)
+        val calendario = Calendar.getInstance()
+        val dia = calendario.get(Calendar.DAY_OF_MONTH)
+        val mes = calendario.get(Calendar.MONTH)
+        val ano = calendario.get(Calendar.YEAR)
+
+        val datePicker = DatePickerDialog(this, DatePickerDialog.OnDateSetListener{view, year, month, dayOfMonth ->
+            var mesReal = month + 1
+            var diaString = "$dayOfMonth"
+            var mesString = "$mesReal"
+            if(mesReal <10){
+                mesString = "0$mesReal"
+            }
+            if(dayOfMonth <10){
+                diaString = "0$dayOfMonth"
+            }
+            Log.i("xxxx","$diaString/$mesString/$year")
+            //exibindo data no input
+            editDataNascimento.setText("$diaString/$mesString/$year")
+        },ano,mes,dia)
+        datePicker.show()
+    }
+
     //Método que carrega o menu
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         //método para inflar o menu
@@ -43,10 +82,29 @@ class NovoUsuarioActivity : AppCompatActivity() {
     //Método que detecta botão do menu clicado
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(validarCampos()){
+            //gravar dados com sharedPreferences (nome e modo)
+            //criando ou abrindo arquivo xml(caso já exista) chamado usuário
+            val arquivo = getSharedPreferences("usuario", MODE_PRIVATE)
+            //chamando edit() para editar arquivo
+            val editor = arquivo.edit()
+            //recebendo dados no arquivo
+            editor.putString("email", editEmail.text.toString())
+            editor.putString("senha", editSenha.text.toString())
+            editor.putString("nome", editNome.text.toString())
+            editor.putString("profissao", editProfissao.text.toString())
+            editor.putFloat("altura", editAltura.text.toString().toFloat())
+            editor.putString("nascimento", editDataNascimento.text.toString())
+            editor.putString("sexo", if(radioMasculino.isChecked) "M" else "F")
+            //gravando
+            editor.apply()
 
+            Toast.makeText(this, "Usuário cadastrado com sucesso!!", Toast.LENGTH_SHORT).show()
+
+            //encerrando activity
+            finish()
         }
         else{
-            
+            //grava nada!!
         }
         return true
     }
@@ -59,7 +117,7 @@ class NovoUsuarioActivity : AppCompatActivity() {
             valido = false
         }
         else if(editSenha.text.isEmpty()){
-            editSenha.error = "Senha obrigatótia"
+            editSenha.error = "Senha obrigatório"
             valido = false
         }
         else if(editNome.text.isEmpty()){
@@ -67,8 +125,16 @@ class NovoUsuarioActivity : AppCompatActivity() {
             valido = false
 
         }
-        else if(editProfissao.text.isEmpty()){
-            editProfissao.error = "Profissao Obrigatória"
+        else if(editAltura.text.isEmpty()){
+            editAltura.error = "Altura Obrigatório"
+            valido = false
+        }
+        else if(editDataNascimento.text.isEmpty()){
+            editDataNascimento.error = "Data de nascimento Obrigatório"
+            valido = false
+        }
+        else if(!radioFeminio.isChecked && !radioMasculino.isChecked){
+            radioMasculino.error = "Gênero é obrigatório"
             valido = false
         }
         return valido

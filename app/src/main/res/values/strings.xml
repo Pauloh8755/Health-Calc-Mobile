@@ -20,4 +20,11 @@
     <string name="cadastro_et_sexo">Sexo</string>
     <string name="cadastro_et_feminino">Feminino</string>
     <string name="cadastro_et_masculino">Masculino</string>
+
+    <!--  Strings para o spneer -->
+    <string-array name="atividades">
+        <item>Atividade Leve</item>
+        <item>Atividade moderada</item>
+        <item>Atividade intensa</item>
+    </string-array>
 </resources>

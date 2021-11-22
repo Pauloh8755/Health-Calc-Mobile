@@ -17,7 +17,6 @@ fun calcularIdade(dataNascimento: String): Int{
     val dataNascimento = LocalDate.of(data.get(2).toInt(),data.get(1).toInt(),data.get(0).toInt())
 
     //calcular intervalo entre a data atual e a data de nascimento
-    val idade = dataNascimento.until(hoje, ChronoUnit.YEARS)
-    Log.i("xpto", idade.toString())
-    return 0
+    val idade = dataNascimento.until(hoje, ChronoUnit.YEARS).toInt()
+    return idade
 }

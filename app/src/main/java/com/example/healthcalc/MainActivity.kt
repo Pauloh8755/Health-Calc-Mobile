@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         //Criando instancia do botão entrar
         val buttonEntrar = findViewById<Button>(R.id.btn_entrar)
         buttonEntrar.setOnClickListener{
-            calcularIdade("12/04/2003")
             //abrindo arquivo usuario sharedPreferences
             val arquivo = getSharedPreferences("usuario", MODE_PRIVATE)
 

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="280dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_wave_pesar_up"
+            android:scaleType="centerCrop"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            >
+            <!-- utilizando container cardview -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:cardCornerRadius="50dp"
+
+
+                >
+                <!-- utilizando scaleType para posicionar a aimagem dentro do card -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/kurt"
+                    android:scaleType="centerCrop"
+                    />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            >
+
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:background="@drawable/ic_pesar" />
+        </LinearLayout>
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vamos nos pesar?"
+            android:textAppearance="@style/titulo"
+            android:textSize="32sp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_info_24"
+                android:layout_gravity="center"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mantenha seu peso sempre atualizado assim você poderá acompanhar sua evolução"
+                android:textAppearance="@style/sub_titulo"
+                android:layout_marginLeft="10dp"
+                />
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:drawableStart="@drawable/person_24"
+            android:drawableTint="@color/Blue_500"
+            android:textAppearance="@style/sub_titulo"
+            android:text="Dados da sua pesagem"
+            android:gravity="center_vertical"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/Blue_500"
+            android:layout_marginStart="10px"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:drawableTint="@color/Blue_500"
+            android:textAppearance="@style/sub_titulo"
+            android:text="Dados da sua pesagem"
+            android:gravity="center_vertical"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="10px"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:drawableTint="@color/Blue_500"
+            android:textAppearance="@style/sub_titulo"
+            android:text="20/11/2021"
+            android:textSize="20sp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="10px"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:drawableTint="@color/Blue_500"
+            android:textAppearance="@style/sub_titulo"
+            android:text="Nivel de atividade"
+            android:gravity="center_vertical"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="10px"
+            />
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/spinner"
+            android:entries="@array/atividades"
+            >
+
+        </Spinner>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:drawableTint="@color/Blue_500"
+            android:textAppearance="@style/sub_titulo"
+            android:text="Seu novo peso:"
+            android:gravity="center_vertical"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="10px"
+            />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="68 kg"
+            app:boxBackgroundColor="@color/white"
+            android:paddingStart="-12dp"
+
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"
+                android:textSize="12sp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/btn_entrar"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrar Peso"
+            style="@style/button_login"
+            />
+    </LinearLayout>
+
+</LinearLayout>

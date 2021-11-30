@@ -20,3 +20,9 @@ fun calcularIdade(dataNascimento: String): Int{
     val idade = dataNascimento.until(hoje, ChronoUnit.YEARS).toInt()
     return idade
 }
+fun obterDataAtual():String{
+    val hoje = LocalDate.now().toString()
+    val data = hoje.split("-")
+    val dataAtual = data.get(2) + "/" + data.get(1) + "/" + data.get(0)
+    return dataAtual
+}

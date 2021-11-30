@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
+    android:paddingBottom="30dp"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical">
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="280dp">
+        android:layout_height="230dp">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -17,7 +22,7 @@
             />
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="70dp"
             android:orientation="horizontal"
             android:gravity="end"
             android:paddingEnd="10dp"
@@ -25,11 +30,9 @@
             >
             <!-- utilizando container cardview -->
             <androidx.cardview.widget.CardView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                app:cardCornerRadius="50dp"
-
-
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:cardCornerRadius="27dp"
                 >
                 <!-- utilizando scaleType para posicionar a aimagem dentro do card -->
                 <ImageView
@@ -39,7 +42,6 @@
                     android:scaleType="centerCrop"
                     />
 
-
             </androidx.cardview.widget.CardView>
 
 
@@ -48,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:gravity="center_horizontal"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="50dp"
             >
 
 
@@ -58,6 +60,7 @@
                 android:background="@drawable/ic_pesar" />
         </LinearLayout>
     </FrameLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -100,27 +103,29 @@
             android:textAppearance="@style/sub_titulo"
             android:text="Dados da sua pesagem"
             android:gravity="center_vertical"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="30dp"
             android:textColor="@color/Blue_500"
             android:layout_marginStart="10px"
             android:textStyle="bold"
+
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:drawableTint="@color/Blue_500"
             android:textAppearance="@style/sub_titulo"
-            android:text="Dados da sua pesagem"
+            android:text="Data da pesagem"
             android:gravity="center_vertical"
             android:layout_marginTop="6dp"
             android:layout_marginStart="10px"
             />
         <TextView
+            android:id="@+id/data_pesagem"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:drawableTint="@color/Blue_500"
             android:textAppearance="@style/sub_titulo"
-            android:text="20/11/2021"
+            android:text=""
             android:textSize="20sp"
             android:gravity="center_vertical"
             android:layout_marginTop="2dp"
@@ -133,7 +138,7 @@
             android:textAppearance="@style/sub_titulo"
             android:text="Nivel de atividade"
             android:gravity="center_vertical"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="12dp"
             android:layout_marginStart="10px"
             />
         <Spinner
@@ -151,7 +156,7 @@
             android:textAppearance="@style/sub_titulo"
             android:text="Seu novo peso:"
             android:gravity="center_vertical"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="12dp"
             android:layout_marginStart="10px"
             />
         <com.google.android.material.textfield.TextInputLayout
@@ -163,6 +168,7 @@
 
             >
             <EditText
+                android:id="@+id/edit_peso"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapSentences"
@@ -171,7 +177,7 @@
 
         </com.google.android.material.textfield.TextInputLayout>
         <Button
-            android:id="@+id/btn_entrar"
+            android:id="@+id/btn_pesar"
             android:layout_marginTop="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -181,3 +187,4 @@
     </LinearLayout>
 
 </LinearLayout>
+</ScrollView>

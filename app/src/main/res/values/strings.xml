@@ -23,7 +23,7 @@
 
     <!--  Strings para o spneer -->
     <string-array name="atividades">
-        <item>Atividade Leve</item>
+        <item>Atividade leve</item>
         <item>Atividade moderada</item>
         <item>Atividade intensa</item>
     </string-array>

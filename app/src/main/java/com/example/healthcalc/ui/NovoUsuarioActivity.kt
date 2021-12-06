@@ -1,4 +1,4 @@
-package com.example.healthcalc
+package com.example.healthcalc.ui
 
 import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -9,8 +9,8 @@ import android.view.MenuItem
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.Toast
+import com.example.healthcalc.R
 import java.util.*
-import kotlin.math.log
 
 class NovoUsuarioActivity : AppCompatActivity() {
     // Criando objeto do tipo EditText

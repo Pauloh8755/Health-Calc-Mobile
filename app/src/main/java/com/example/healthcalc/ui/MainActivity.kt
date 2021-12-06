@@ -1,4 +1,4 @@
-package com.example.healthcalc
+package com.example.healthcalc.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.example.healthcalc.utils.calcularIdade
+import com.example.healthcalc.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

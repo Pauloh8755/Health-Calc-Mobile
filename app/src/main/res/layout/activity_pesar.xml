@@ -142,6 +142,7 @@
             android:layout_marginStart="10px"
             />
         <Spinner
+            android:id="@+id/spn_atividade"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner"
@@ -162,7 +163,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="68 kg"
+            android:hint="kg"
             app:boxBackgroundColor="@color/white"
             android:paddingStart="-12dp"
 

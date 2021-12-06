@@ -1,8 +1,9 @@
-package com.example.healthcalc
+package com.example.healthcalc.ui
 
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.healthcalc.R
 import com.example.healthcalc.utils.obterDataAtual
 import java.time.LocalDate
 
@@ -24,22 +25,32 @@ class PesarActivity : AppCompatActivity(){
         //recebendo editText através do id
         editPeso = findViewById(R.id.edit_peso)
         btnPesar = findViewById(R.id.btn_pesar)
+        spnAtividadeFisica = findViewById(R.id.spn_atividade)
 
         //adicionando ouvinte de click para o botão
         btnPesar.setOnClickListener {
-            //abrindo arquivo sharedPreferences para salvar o peso
-            var arquivo = getSharedPreferences("usuario", MODE_PRIVATE)
-
-            //chamando edit() para editar o arquivo
-            var editor =  arquivo.edit()
-
-            //recebendo dados
-            editor.putFloat("peso", editPeso.text.toString().toFloat())
-            editor.putString("atividade", spnAtividadeFisica.selectedItem.toString())
-
-            editor.apply()
-            Toast.makeText(this, "Peso registrado com sucesso", Toast.LENGTH_LONG).show()
-            finish()
+            gravarPeso()
         }
+    }
+
+    private fun gravarPeso(){
+        //abrindo arquivo sharedPreferences para salvar o peso
+        val arquivo = getSharedPreferences("usuario", MODE_PRIVATE)
+
+        //chamando edit() para editar o arquivo
+        val editor =  arquivo.edit()
+
+        //obter dados ja inseridos
+        val peso = arquivo.getString("peso", "")
+        val dataPesagem = arquivo.getString("nascimento", "")
+
+        //recebendo dados
+        editor.putString("nascimento", "$dataPesagem;${LocalDate.now()}")
+        editor.putString("peso", "$peso;${editPeso.text}")
+        editor.putInt("atividade", spnAtividadeFisica.selectedItemPosition)
+
+        editor.apply()
+        Toast.makeText(this, "Peso registrado com sucesso", Toast.LENGTH_LONG).show()
+        finish()
     }
 }

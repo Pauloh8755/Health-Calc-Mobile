@@ -21,8 +21,10 @@ fun calcularIdade(dataNascimento: String): Int{
     return idade
 }
 fun obterDataAtual():String{
-    val hoje = LocalDate.now().toString()
-    val data = hoje.split("-")
-    val dataAtual = data.get(2) + "/" + data.get(1) + "/" + data.get(0)
-    return dataAtual
+    val hoje = LocalDate.now()
+    val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+    val dataAtual =  hoje.format(formatter)
+//    val data = hoje.split("-")
+//    val dataAtual = data.get(2) + "/" + data.get(1) + "/" + data.get(0)
+    return dataAtual.toString()
 }
